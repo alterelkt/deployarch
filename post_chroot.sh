@@ -23,7 +23,7 @@ echo "Enter root password :"
 passwd
 
 # install basic utilities and drivers
-pacman -S grub grub-btrfs efibootmgr os-prober btrfs-progs snapper base-devel linux-headers dialog sudo networkmanager wpa_supplicant bluez bluez-utils mtools dosfstools xdg-user-dirs xdg-utils bash-completion rsync alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth mesa xf86-video-intel 
+pacman -Syy grub grub-btrfs efibootmgr os-prober btrfs-progs snapper base-devel linux-headers dialog sudo networkmanager wpa_supplicant bluez bluez-utils mtools dosfstools xdg-user-dirs xdg-utils bash-completion rsync alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth mesa xf86-video-intel 
 #nvidia nvidia-utils nvidia-settings
 
 # enable services to run automatically after boot
@@ -38,7 +38,7 @@ usermod -aG wheel,audio,video aman
 echo "aman ALL=(ALL) ALL" >> /etc/sudoers.d/aman
 
 # copy script files to home of root user
-cp ~/deployarch-main /mnt/home/aman/
+cp -r ~/deployarch-main /mnt/home/aman/
 
 # install GRUB bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB

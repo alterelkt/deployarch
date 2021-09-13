@@ -4,7 +4,7 @@
 timedatectl set-ntp true
 
 # update pacman database
-pacman -Syy
+
 
 # show block devices
 lsblk

@@ -24,6 +24,7 @@ sudo systemctl enable --now snapper-cleanup.timer
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+cd ..
 
 # some yay packages
 yay -S snap-pac-grub snapper-gui brave-bin
