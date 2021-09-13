@@ -1,6 +1,6 @@
-# alterelkt/deployarch #
-#### My archlinux installation and customization scripts. #### </br>
-## Steps : ##
+# alterelkt/deployarch
+#### My archlinux installation and customization scripts. </br>
+## Steps :
 * Boot the live archiso media
 * Install required utilities <br/>
   `pacman -Syy wget unzip`
