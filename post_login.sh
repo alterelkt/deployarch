@@ -8,7 +8,7 @@ sudo btrfs subvolume delete /.snapshots
 sudo mkdir /.snapshots
 sudo mount -a
 sudo chmod 750 /.snapshots
-printf '"-> change ALLOW_USERS="" ->-> ALLOW_USERS="aman" -> down below # limits for timeline cleanup check archwiki for recommended values"'
+printf '"-> change ALLOW_USERS="" ->-> ALLOW_USERS="aman" -> down below # limits for timeline cleanup check archwiki for recommended values\n"'
 while true; do
     read -p "Press Y/y to edit /etc/snapper/configs/root" yn
     case $yn in
@@ -57,7 +57,7 @@ Description = Backing up /boot...\n
 When = PreTransaction\n
 Exec = /usr/bin/rsync -a --delete /boot /.bootbackup\n
 \n
-\n Check if above snippet is in the /etc/pacman.d/hooks/50-bootbackup.hook"'
+\n Check if above snippet is in the /etc/pacman.d/hooks/50-bootbackup.hook \n"'
 
 while true; do
     read -p "Press Y/y to run 'sudo vim /etc/pacman.d/hooks/50-bootbackup.hook'" yn
@@ -74,4 +74,4 @@ sudo chown :aman /.snapshots
 
 # post install packages
 sudo pacman -S xorg xorg-xrandr qtile alacritty zsh dmenu feh picom trayer htop p7zip unzip qutebrowser wget ffmpeg ffmpeg-thumbnailer handbrake mpv krita inkscape imagemagick
-printf "Script post_login.sh executed completely.\n \n \n Enjoy!"
+printf "Script post_login.sh executed completely.\n \n \n Enjoy!\n"

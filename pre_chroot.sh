@@ -43,4 +43,4 @@ pacstrap /mnt base linux linux-firmware git vim intel-ucode btrfs-progs
 # generate filesystem table
 genfstab -U /mnt >> /mnt/etc/fstab
 
-printf "Script pre_chroot executed completely.\n \n \n Type 'arch-chroot /mnt' to chroot into new installation, and then run script post_chroot.sh"
+printf "Script pre_chroot executed completely.\n \n \n Type 'arch-chroot /mnt' to chroot into new installation, and then run script post_chroot.sh\n"

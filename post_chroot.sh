@@ -39,4 +39,4 @@ echo "aman ALL=(ALL) ALL" >> /etc/sudoers.d/aman
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-printf "Script post_chroot executed completely.\n \n \n Run the script mkinitcpio_tutorial.sh"
+printf "Script post_chroot executed completely.\n \n \n Run the script mkinitcpio_tutorial.sh\n"
