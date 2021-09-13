@@ -1,8 +1,7 @@
 #!/bin/bash
-
-boot_partition=vda1 #${boot_partition}
-swap_partition=vda2 #${swap_partition}
-root_partition=vda3 #${root_partition}
+read -p "Enter boot partiton (eg. sda1) " boot_partition
+read -p "Enter swap partiton (eg. sda2) " swap_partition
+read -p "Enter root partiton (eg. sda3) " root_partition
 
 mkfs.fat -F32 /dev/${boot_partition}
 mkswap /dev/${swap_partition}
