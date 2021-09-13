@@ -38,7 +38,7 @@ mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@var_log /dev/
 mount /dev/${boot_partition} /mnt/boot
 
 # install base packages
-pacstrap /mnt base linux linux-firmware git vim intel-ucode btrfs-progs
+pacstrap /mnt base linux linux-firmware intel-ucode btrfs-progs git wget unzip vim
 
 # generate filesystem table
 genfstab -U /mnt >> /mnt/etc/fstab

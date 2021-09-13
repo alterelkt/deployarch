@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # modify mkinitcpio.conf
-printf "-> In the start MODULES=() ->-> MODULES=(btrfs) \n-> In below down HOOKS=(...block filesystem...fsck) ->-> HOOKS=(...block encrypt filesystem...)\n"
+printf "In the start 'MODULES=()' to 'MODULES=(btrfs)' \n In below down 'HOOKS=(...block filesystem...fsck)' to 'HOOKS=(...block encrypt filesystem...)'\n"
 while true; do
     read -p "Press Y/y to edit mkinitcpio.conf" yn
     case $yn in
