@@ -36,6 +36,9 @@ passwd aman
 usermod -aG wheel,audio,video aman
 echo "aman ALL=(ALL) ALL" >> /etc/sudoers.d/aman
 
+# copy script files to home of root user
+cp ~/deployarch-main /mnt/home/aman/
+
 # install GRUB bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

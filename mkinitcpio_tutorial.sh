@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # modify mkinitcpio.conf
-printf "In the start 'MODULES=()' to 'MODULES=(btrfs)' \n In below down 'HOOKS=(...block filesystem...fsck)' to 'HOOKS=(...block encrypt filesystem...)'\n"
+printf "In the start 'MODULES=()' to 'MODULES=(btrfs)' \n In below down 'HOOKS=(...block filesystem...)' to 'HOOKS=(...block encrypt filesystem...)'\n"
 while true; do
-    read -p "Press Y/y to edit mkinitcpio.conf" yn
+    read -p "Press Y/y to edit mkinitcpio.conf " yn
     case $yn in
         [Yy]* ) vim /etc/mkinitcpio.conf ; break;;
         [Nn]* ) exit;;
@@ -11,7 +11,7 @@ while true; do
     esac
 done
 while true; do
-    read -p "Press Y/y to run 'mkinitcpio -p linux'" yn
+    read -p "Press Y/y to run 'mkinitcpio -p linux' " yn
     case $yn in
         [Yy]* ) mkinitcpio -p linux ; break;;
         [Nn]* ) exit;;

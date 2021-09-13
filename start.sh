@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# check network connectivity
-ping -c 3 archlinux.org
-
 # date time
 timedatectl set-ntp true
 

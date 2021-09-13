@@ -10,7 +10,7 @@ sudo mount -a
 sudo chmod 750 /.snapshots
 printf '"Change "ALLOW_USERS=""" to "ALLOW_USERS="aman"" \n down below # limits for timeline cleanup check archwiki for recommended values\n"'
 while true; do
-    read -p "Press Y/y to edit /etc/snapper/configs/root" yn
+    read -p "Press Y/y to edit /etc/snapper/configs/root " yn
     case $yn in
         [Yy]* ) sudo vim /etc/snapper/configs/root ; break;;
         [Nn]* ) exit;;
@@ -60,7 +60,7 @@ Exec = /usr/bin/rsync -a --delete /boot /.bootbackup\n
 \n Check if above snippet is in the /etc/pacman.d/hooks/50-bootbackup.hook \n"'
 
 while true; do
-    read -p "Press Y/y to run 'sudo vim /etc/pacman.d/hooks/50-bootbackup.hook'" yn
+    read -p "Press Y/y to run 'sudo vim /etc/pacman.d/hooks/50-bootbackup.hook' " yn
     case $yn in
         [Yy]* ) sudo vim /etc/pacman.d/hooks/50-bootbackup.hook ; break;;
         [Nn]* ) exit;;

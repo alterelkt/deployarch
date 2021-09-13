@@ -43,4 +43,6 @@ pacstrap /mnt base linux linux-firmware intel-ucode btrfs-progs git wget unzip v
 # generate filesystem table
 genfstab -U /mnt >> /mnt/etc/fstab
 
+# copy script files to home of root user
+cp deployarch-main /mnt/root/
 printf "Script pre_chroot executed completely.\n \n \n Type 'arch-chroot /mnt' to chroot into new installation, and then run script post_chroot.sh\n"
