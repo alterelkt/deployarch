@@ -21,25 +21,7 @@ echo "Enter root password :"
 passwd
 
 # install basic utilities and drivers
-pacman -S \
-# bootloader and filesystem related
-    grub grub-btrfs efibootmgr os-prober btrfs-progs snapper \ 
-# development and previlages related
-    base-devel linux-headers dialog sudo \ 
-# connectivity related
-    networkmanager wpa_supplicant bluez bluez-utils \ 
-# fat filesystem related
-    mtools dosfstools \ 
-# XDG related
-    xdg-user-dirs xdg-utils \ 
-# other utilities
-    bash-completion rsync acpi \ 
-# audio related
-    alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth \ 
-# intel graphics
-    mesa xf86-video-intel \
-# nvidia related 
-    nvidia nvidia-utils nvidia-settings
+pacman -S grub grub-btrfs efibootmgr os-prober btrfs-progs snapper base-devel linux-headers dialog sudo networkmanager wpa_supplicant bluez bluez-utils mtools dosfstools xdg-user-dirs xdg-utils bash-completion rsync acpi alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth mesa xf86-video-intel nvidia nvidia-utils nvidia-settings
 
 # enable services to run automatically after boot
 systemctl enable NetworkManager
