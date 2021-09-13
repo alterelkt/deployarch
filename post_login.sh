@@ -8,13 +8,12 @@ sudo btrfs subvolume delete /.snapshots
 sudo mkdir /.snapshots
 sudo mount -a
 sudo chmod 750 /.snapshots
-printf '"Change "ALLOW_USERS=""" to "ALLOW_USERS="aman"" \n down below # limits for timeline cleanup check archwiki for recommended values\n"'
+printf '"Change "ALLOW_USERS=""" to "ALLOW_USERS="$USER"" \n down below # limits for timeline cleanup check archwiki for recommended values\n"'
 while true; do
     read -p "Press Y/y to edit /etc/snapper/configs/root " yn
     case $yn in
         [Yy]* ) sudo vim /etc/snapper/configs/root ; break;;
         [Nn]* ) exit;;
-        * ) echo "Press Y/y or N/n.";;
     esac
 done
 sudo systemctl enable --now snapper-timeline.timer
@@ -65,7 +64,6 @@ while true; do
     case $yn in
         [Yy]* ) sudo vim /etc/pacman.d/hooks/50-bootbackup.hook ; break;;
         [Nn]* ) exit;;
-        * ) echo "Press Y/y or N/n.";;
     esac
 done
 

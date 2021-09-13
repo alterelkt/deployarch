@@ -1,7 +1,13 @@
 #!/bin/bash
-read -p "Enter boot partiton (eg. sda1) " boot_partition
-read -p "Enter swap partiton (eg. sda2) " swap_partition
-read -p "Enter root partiton (eg. sda3) " root_partition
+
+timedatectl set-ntp true
+
+lsblk
+read -p "Enter device (eg. sda) " device_to_install
+gdisk /dev/${device_to_install}
+boot_partition=${device_to_install}1
+swap_partition${device_to_install}2
+root_partition${device_to_install}3
 
 mkfs.fat -F32 /dev/${boot_partition}
 mkswap /dev/${swap_partition}
@@ -44,4 +50,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # copy script files to home of root user
 cp -r ~/deployarch-main /mnt/root/
-printf "Script pre_chroot executed completely.\n \n \n Type 'arch-chroot /mnt' to chroot into new installation, and then run script post_chroot.sh\n"
+
+arch-chroot /mnt
