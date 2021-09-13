@@ -73,5 +73,5 @@ sudo chmod a+rx /.snapshots
 sudo chown :aman /.snapshots
 
 # post install packages
-sudo pacman -S xorg xorg-xrandr qtile alacritty zsh dmenu feh picom trayer htop p7zip unzip qutebrowser wget ffmpeg ffmpeg-thumbnailer handbrake mpv krita inkscape imagemagick
+#sudo pacman -S xorg xorg-xrandr qtile alacritty zsh dmenu feh picom trayer htop p7zip unzip qutebrowser wget ffmpeg ffmpeg-thumbnailer handbrake mpv krita inkscape imagemagick
 printf "Script post_login.sh executed completely.\n \n \n Enjoy!\n"
