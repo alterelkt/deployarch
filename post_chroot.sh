@@ -32,7 +32,7 @@ systemctl enable acpid
 useradd -m aman
 echo "Enter user aman's password :"
 passwd aman
-usermod -aG wheel,audio,video,libvirt aman
+usermod -aG wheel,audio,video aman
 echo "aman ALL=(ALL) ALL" >> /etc/sudoers.d/aman
 
 # install GRUB bootloader
