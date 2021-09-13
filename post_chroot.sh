@@ -13,11 +13,11 @@ locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=us" >> /etc/vconsole.conf
 # set hostname
-echo "archbtrfs" >> /etc/hostname
+echo "arch" >> /etc/hostname
 # configure hosts file
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1 localhost" >> /etc/hosts
-echo "127.0.1.1 archbtrfs.localdomain archbtrfs" >> /etc/hosts
+echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 # prompt for root user password
 echo "Enter root password :"
 passwd
