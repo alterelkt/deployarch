@@ -6,8 +6,8 @@ lsblk
 read -p "Enter device (eg. sda) " device_to_install
 gdisk /dev/${device_to_install}
 boot_partition=${device_to_install}1
-swap_partition${device_to_install}2
-root_partition${device_to_install}3
+swap_partition=${device_to_install}2
+root_partition=${device_to_install}3
 
 mkfs.fat -F32 /dev/${boot_partition}
 mkswap /dev/${swap_partition}
@@ -36,10 +36,11 @@ umount /mnt
 
 # remount partition with flags
 mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@ /dev/mapper/cryptroot /mnt
-mkdir -p /mnt/{boot,home,.snapshots,var_log}
+mkdir -p /mnt/{boot,home,.snapshots,var}
+mkdir /mnt/var/log
 mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@home /dev/mapper/cryptroot /mnt/home
 mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@snapshots /dev/mapper/cryptroot /mnt/.snapshots
-mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@var_log /dev/mapper/cryptroot /mnt/var_log
+mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@var_log /dev/mapper/cryptroot /mnt/var/log
 mount /dev/${boot_partition} /mnt/boot
 
 # install base packages
